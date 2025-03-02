@@ -19,8 +19,7 @@ initializeSocket(server);
 // Middleware
 app.use(
   cors({
-    origin: "http://localhost:5173", // Allow requests from frontend
-    credentials: true, // Allow cookies and authorization headers
+    origin: 'https://deployment-silk-phi.vercel.app' || '*'
   })
 );
 
