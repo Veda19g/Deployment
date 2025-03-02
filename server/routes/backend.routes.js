@@ -1,0 +1,11 @@
+const  {Router}=require("express");
+const userRoutes=require("./user.routes");
+const researchRoutes=require("./research.routes");
+const workspaceRoutes=require("./workspace.routes");
+const postRoutes=require("./post.routes");
+const backendroutes=Router();
+backendroutes.use("/user",userRoutes);
+backendroutes.use("/research",researchRoutes);
+backendroutes.use("/workspace",workspaceRoutes);
+backendroutes.use("/post",postRoutes);
+module.exports=backendroutes;
