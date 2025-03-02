@@ -25,7 +25,7 @@ export default function Workspace() {
   const fetchWorkspaces = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.get("http://localhost:8000/api/v1/workspace/get-workspaces/all", {
+      const res = await axios.get("https://deployment-mcmr.onrender.com/api/v1/workspace/get-workspaces/all", {
         withCredentials: true,
         headers: { "Content-Type": "application/json" },
       });
@@ -52,7 +52,7 @@ export default function Workspace() {
 
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/v1/workspace/create",
+        "https://deployment-mcmr.onrender.com/api/v1/workspace/create",
         newWorkspace,
         { withCredentials: true, headers: { "Content-Type": "application/json" } }
       );

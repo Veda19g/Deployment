@@ -13,7 +13,7 @@ const ResearchIdeas = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:8000/api/v1/research/generate-ideas", {
+      .get("https://deployment-mcmr.onrender.com/api/v1/research/generate-ideas", {
         withCredentials: true,
         headers: {
           "Content-Type": "application/json",

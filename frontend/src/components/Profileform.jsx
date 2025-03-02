@@ -44,7 +44,7 @@ export default function ProfileForm() {
     const fetchUserData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/v1/user/get-details",
+          "https://deployment-mcmr.onrender.com/api/v1/user/get-details",
           {
             withCredentials: true,
             headers: { "Content-Type": "application/json" },
@@ -105,7 +105,7 @@ export default function ProfileForm() {
     setIsSubmitting(true);
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/user/update",
+        "https://deployment-mcmr.onrender.com/api/v1/user/update",
         formData,
         {
           withCredentials: true,

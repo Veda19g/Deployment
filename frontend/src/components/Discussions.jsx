@@ -20,7 +20,7 @@ const DiscussionPage = () => {
   const fetchPosts = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get("http://localhost:8000/api/v1/post/get-posts", {
+      const response = await axios.get("https://deployment-mcmr.onrender.com/api/v1/post/get-posts", {
         withCredentials: true,
         headers: { "Content-Type": "application/json" },
       });
@@ -34,7 +34,7 @@ const DiscussionPage = () => {
 
   const handleLike = async (postId) => {
     try {
-      await axios.put(`http://localhost:8000/api/v1/post/like/${postId}`, {}, {
+      await axios.put(`https://deployment-mcmr.onrender.com/api/v1/post/like/${postId}`, {}, {
         withCredentials: true,
         headers: { "Content-Type": "application/json" },
       });
@@ -47,7 +47,7 @@ const DiscussionPage = () => {
   const handleComment = async (postId) => {
     if (!commentText[postId]) return;
     try {
-      await axios.post(`http://localhost:8000/api/v1/post/comment/${postId}`, {
+      await axios.post(`https://deployment-mcmr.onrender.com/api/v1/post/comment/${postId}`, {
         text: commentText[postId],
       }, {
         withCredentials: true,
@@ -64,7 +64,7 @@ const DiscussionPage = () => {
     if (!newPostContent.trim()) return;
     setIsSubmitting(true);
     try {
-      await axios.post("http://localhost:8000/api/v1/post/create", {
+      await axios.post("https://deployment-mcmr.onrender.com/api/v1/post/create", {
         content: newPostContent,
       }, {
         withCredentials: true,

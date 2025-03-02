@@ -17,7 +17,7 @@ export default function ViewWorkspace() {
       setIsLoading(true);
       try {
         const res = await axios.get(
-          `http://localhost:8000/api/v1/workspace/get-workspace/${workspaceId}`,
+          `https://deployment-mcmr.onrender.com/api/v1/workspace/get-workspace/${workspaceId}`,
           { withCredentials: true, headers: { "Content-Type": "application/json" } }
         );
         setWorkspace(res.data);
@@ -41,7 +41,7 @@ export default function ViewWorkspace() {
 
     try {
       await axios.post(
-        `http://localhost:8000/api/v1/workspace/add-member`,
+        `https://deployment-mcmr.onrender.com/api/v1/workspace/add-member`,
         { workspaceId, email: memberEmail },
         { withCredentials: true, headers: { "Content-Type": "application/json" } }
       );
@@ -62,7 +62,7 @@ export default function ViewWorkspace() {
   const createDocument = async () => {
     try {
       const res = await axios.post(
-        `http://localhost:8000/api/v1/workspace/create-document`,
+        `https://deployment-mcmr.onrender.com/api/v1/workspace/create-document`,
         { workspaceId, name: "Untitled Document" },
         { withCredentials: true, headers: { "Content-Type": "application/json" } }
       );
