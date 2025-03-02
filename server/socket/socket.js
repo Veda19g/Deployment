@@ -5,7 +5,7 @@ const Document = require("../models/Document.Model");
 function initializeSocket(server) {
   const io = new Server(server, {
     cors: {
-      origin: "http://localhost:5173", // Allow frontend to connect
+      origin: 'https://deployment-silk-phi.vercel.app', // Allow frontend to connect
       methods: ["GET", "POST"],
     },
   });
