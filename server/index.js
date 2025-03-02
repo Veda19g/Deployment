@@ -17,9 +17,11 @@ const server = http.createServer(app);
 initializeSocket(server);
 
 // Middleware
+
 app.use(
   cors({
-    origin: 'https://deployment-silk-phi.vercel.app' || '*'
+    origin: "https://deployment-silk-phi.vercel.app", // Allow requests from frontend
+    credentials: true, // Allow cookies and authorization headers
   })
 );
 
