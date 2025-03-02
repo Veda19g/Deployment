@@ -22,7 +22,7 @@ export function Signup() {
         delete userCopy.password;
         localStorage.setItem("user", JSON.stringify(userCopy));
       }
-      navigate("/profile");
+      navigate("/signin");
       return;
     }
     alert("Not allowed. Have a great day :)");
