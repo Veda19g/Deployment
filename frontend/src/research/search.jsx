@@ -14,7 +14,7 @@ const fetchArxivPapers = async (query, filters) => {
     //     filterQuery += `+AND+submittedDate:[${year}0101 TO ${year}1231]`;
     // }
 
-    const response = await fetch(`http://export.arxiv.org/api/query?search_query=all:${filterQuery}&start=0&max_results=10`);
+    const response = await fetch(`https://export.arxiv.org/api/query?search_query=all:${filterQuery}&start=0&max_results=10`);
     const text = await response.text();
 
     const parser = new DOMParser();
@@ -37,15 +37,15 @@ const fetchArxivPapers = async (query, filters) => {
 };
 
 const fetchCorePapers = async (query, filters) => {
-    const apiKey = "YOUR_CORE_API_KEY"; // Replace with actual key
+    const apiKey = "Mcub9FkZ1vmaONfGJpl6St34d8EDVnHh"; // Replace with actual key
     if (!apiKey) return [];
 
     const { year } = filters;
     let filterQuery = query;
 
-    if (year) {
-        filterQuery += ` year:${year}`;
-    }
+    // if (year) {
+    //     filterQuery += ` year:${year}`;
+    // }
 
     try {
         const response = await fetch(`https://api.core.ac.uk/v3/search/works?q=${filterQuery}&limit=10`, {
@@ -75,9 +75,9 @@ const fetchSemanticScholarPapers = async (query, filters) => {
     const { year } = filters;
     let filterQuery = query;
 
-    if (year) {
-        filterQuery += ` year:${year}`;
-    }
+    // if (year) {
+    //     filterQuery += ` year:${year}`;
+    // }
 
     const response = await fetch(`https://api.semanticscholar.org/graph/v1/paper/search?query=${filterQuery}&limit=10&fields=title,authors,abstract,year,venue,citationCount,openAccessPdf,s2FieldsOfStudy`);
     const data = await response.json();
