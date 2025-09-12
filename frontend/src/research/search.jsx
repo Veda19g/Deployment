@@ -10,9 +10,9 @@ const fetchArxivPapers = async (query, filters) => {
     const { year } = filters;
     let filterQuery = query;
 
-    if (year) {
-        filterQuery += `+AND+submittedDate:[${year}0101 TO ${year}1231]`;
-    }
+    // if (year) {
+    //     filterQuery += `+AND+submittedDate:[${year}0101 TO ${year}1231]`;
+    // }
 
     const response = await fetch(`http://export.arxiv.org/api/query?search_query=all:${filterQuery}&start=0&max_results=10`);
     const text = await response.text();
