@@ -4,7 +4,7 @@ import { Book, Calendar, ExternalLink, Filter, Layers, Search, Tag, User, X } fr
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-const sources = ["arXiv", "CORE", "Semantic Scholar", "Elsevier"];
+const sources = ["arXiv", "Elsevier"];
 
 const fetchArxivPapers = async (query, filters) => {
     const { year } = filters;
@@ -162,12 +162,12 @@ export default function ResearchComponent() {
         if (selectedSources.includes("arXiv")) {
             results = results.concat(await fetchArxivPapers(query, filters));
         }
-        if (selectedSources.includes("CORE")) {
-            results = results.concat(await fetchCorePapers(query, filters));
-        }
-        if (selectedSources.includes("Semantic Scholar")) {
-            results = results.concat(await fetchSemanticScholarPapers(query, filters));
-        }
+        // if (selectedSources.includes("CORE")) {
+        //     results = results.concat(await fetchCorePapers(query, filters));
+        // }
+        // if (selectedSources.includes("Semantic Scholar")) {
+        //     results = results.concat(await fetchSemanticScholarPapers(query, filters));
+        // }
         if (selectedSources.includes("Elsevier")) {
             results = results.concat(await fetchElsevierPapers(query, filters));
         }
